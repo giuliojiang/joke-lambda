@@ -2,6 +2,12 @@
 
     <head>
 
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
         <script>
 
 // callback(err, response object)
@@ -21,11 +27,9 @@ var json_request = function(json_obj, callback) {
 };
 
 var btn_click = function() {
-    json_request({
-        txt: "This is a test"
-    }, function(err, resp) {
-        console.log(err);
-        console.log(resp);
+    json_request({}, function(err, resp) {
+        var joke_text = resp.joke;
+        document.getElementById("the_joke").innerHTML = joke_text;
     });
 };
 
@@ -35,9 +39,32 @@ var btn_click = function() {
 
     <body>
 
-        <h1>Jokes by FASER</h1>
+        <nav class="orange darken-3">
+            <div class="container nav-wrapper">
+                <a href="#" class="brand-logo">Jokes by FASER</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-        <button onclick="btn_click()">Test button</button>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="section">
+
+                <div class="row center">
+                    <div class="col s12">
+                        <button class="waves-effect waves-light btn amber darken-3" onclick="btn_click()">I feel sad</button>
+                    </div>
+                </div>
+
+                <div class="row center">
+                    <p id="the_joke"></p>
+                </div>
+
+            </div>
+
+        </div>
 
     </body>
 

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
+var oneLinerJoke = require('one-liner-joke');
 
 var EXPRESS_PORT = 23000;
 
@@ -20,8 +21,10 @@ app.get("/chat/:msg", (req, res) => {
 
 app.post("/pg", (req, res) => {
     console.info("POST: " + JSON.stringify(req.body));
+    var random_joke = oneLinerJoke.getRandomJoke();
+    var joke_text = random_joke.body;
     res.send(JSON.stringify({
-        _t: "Test response"
+        joke: joke_text
     }));
 });
 
