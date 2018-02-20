@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
 var path = require("path");
@@ -22,6 +23,8 @@ app.post("/pg", (req, res) => {
     }));
 });
 
-app.listen(EXPRESS_PORT, () => {
-    console.log("Example app listening on port " + EXPRESS_PORT);
-});
+// app.listen(EXPRESS_PORT, () => {
+//     console.log("Example app listening on port " + EXPRESS_PORT);
+// });
+
+module.exports.handler = serverless(app);

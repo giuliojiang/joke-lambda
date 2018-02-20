@@ -20,7 +20,7 @@ var json_request = function(json_obj, callback) {
             callback(null, resp_obj);
         }
     };
-    xhttp.open("POST", "pg", true);
+    xhttp.open("POST", window.location.href + "/pg", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     var json_str = JSON.stringify(json_obj);
     xhttp.send(json_str);
@@ -54,7 +54,7 @@ var btn_click = function() {
 
                 <div class="row center">
                     <div class="col s12">
-                        <button class="waves-effect waves-light btn amber darken-3" onclick="btn_click()">I feel sad</button>
+                        <button class="waves-effect waves-light btn amber darken-3" onclick="btn_click()">I feel sad NSFW</button>
                     </div>
                 </div>
 
