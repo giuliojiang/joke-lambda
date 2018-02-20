@@ -14,13 +14,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/chat/:msg", (req, res) => {
-    var msg = req.params.msg;
-    res.send("Got your message. Message is " + msg);
-});
-
 app.post("/pg", (req, res) => {
-    console.info("POST: " + JSON.stringify(req.body));
     var random_joke = oneLinerJoke.getRandomJoke();
     var joke_text = random_joke.body;
     res.send(JSON.stringify({
