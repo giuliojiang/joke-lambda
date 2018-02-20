@@ -1,1 +1,44 @@
-Hello world index.html
+<html>
+
+    <head>
+
+        <script>
+
+// callback(err, response object)
+var json_request = function(json_obj, callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("XMLHTTP replied with " + this.responseText);
+            var resp_obj = JSON.parse(this.responseText);
+            callback(null, resp_obj);
+        }
+    };
+    xhttp.open("POST", "pg", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    var json_str = JSON.stringify(json_obj);
+    xhttp.send(json_str);
+};
+
+var btn_click = function() {
+    json_request({
+        txt: "This is a test"
+    }, function(err, resp) {
+        console.log(err);
+        console.log(resp);
+    });
+};
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>Jokes by FASER</h1>
+
+        <button onclick="btn_click()">Test button</button>
+
+    </body>
+
+</html>
