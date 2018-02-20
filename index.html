@@ -20,7 +20,12 @@ var json_request = function(json_obj, callback) {
             callback(null, resp_obj);
         }
     };
-    xhttp.open("POST", window.location.href + "/pg", true);
+    var wurl = window.location.href;
+    var wurl_last = wurl[wurl.length - 1];
+    if (wurl_last == '/') {
+        wurl = wurl.substring(0, wurl.length - 1);
+    }
+    xhttp.open("POST", wurl + "/pg", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     var json_str = JSON.stringify(json_obj);
     xhttp.send(json_str);
@@ -54,7 +59,7 @@ var btn_click = function() {
 
                 <div class="row center">
                     <div class="col s12">
-                        <button class="waves-effect waves-light btn amber darken-3" onclick="btn_click()">I feel sad NSFW</button>
+                        <button class="waves-effect waves-light btn amber darken-3" onclick="btn_click()">I feel sad</button>
                     </div>
                 </div>
 

@@ -118,7 +118,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/express-app/dev/1519136996442-2018-02-20T14:29:56.442Z/express-app.zip"
+                "S3Key": "serverless/express-app/dev/1519141715983-2018-02-20T15:48:35.983Z/express-app.zip"
               },
               "FunctionName": "express-app-dev-app",
               "Handler": "index.handler",
@@ -137,14 +137,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionz58guqm0x6vJ5bsH26jSmcHjJJjksSQTT2T89jFvpk": {
+          "AppLambdaVersion1RRFibe6qx6Tt6bcwdg1kXM75tgw6rq3CBwdM5acc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "uXF4nee31pn6Zd13P/d9VqpeLxvbLhE0lO+5H3Vv4Po="
+              "CodeSha256": "LLDYeRQO/dA3YlFiOv3IXkc5ms1XLQoinZa2qdlfWo4="
             }
           },
           "GetJokeLambdaFunction": {
@@ -154,7 +154,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/express-app/dev/1519136996442-2018-02-20T14:29:56.442Z/express-app.zip"
+                "S3Key": "serverless/express-app/dev/1519141715983-2018-02-20T15:48:35.983Z/express-app.zip"
               },
               "FunctionName": "express-app-dev-getJoke",
               "Handler": "index.handler",
@@ -173,14 +173,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetJokeLambdaVersionpkQB1JzHUgsnYJzaX6Uw8HAvo2O2ZGHavfasxFyXt4": {
+          "GetJokeLambdaVersionyDpIPpP1RzsD1Jh73qtAMPKZPTM9X9bzAWoq0GBCk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetJokeLambdaFunction"
               },
-              "CodeSha256": "uXF4nee31pn6Zd13P/d9VqpeLxvbLhE0lO+5H3Vv4Po="
+              "CodeSha256": "LLDYeRQO/dA3YlFiOv3IXkc5ms1XLQoinZa2qdlfWo4="
             }
           },
           "ApiGatewayRestApi": {
@@ -344,7 +344,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1519136996462": {
+          "ApiGatewayDeployment1519141716002": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -434,13 +434,13 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionz58guqm0x6vJ5bsH26jSmcHjJJjksSQTT2T89jFvpk"
+              "Ref": "AppLambdaVersion1RRFibe6qx6Tt6bcwdg1kXM75tgw6rq3CBwdM5acc"
             }
           },
           "GetJokeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetJokeLambdaVersionpkQB1JzHUgsnYJzaX6Uw8HAvo2O2ZGHavfasxFyXt4"
+              "Ref": "GetJokeLambdaVersionyDpIPpP1RzsD1Jh73qtAMPKZPTM9X9bzAWoq0GBCk"
             }
           },
           "ServiceEndpoint": {
@@ -508,7 +508,7 @@
     "artifact": "/home/gj/git/joke-lambda/.serverless/express-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/express-app/dev/1519136996442-2018-02-20T14:29:56.442Z",
+    "artifactDirectoryName": "serverless/express-app/dev/1519141715983-2018-02-20T15:48:35.983Z",
     "artifact": "express-app.zip"
   }
 }
